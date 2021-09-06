@@ -2,4 +2,13 @@
     <string name="app_name">PeerToPeer</string>
     <string name="register_button">Don\'t have an account? <b>Register Here</b></string>
     <string name="phone">Phone</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="welcome_on_board">WELCOME ON BOARD</string>
+    <string name="view_text1">Rent anytime,\nat your own</string>
+    <string name="view_text3">Select from,\nwide varieties \nof cars</string>
+    <string name="view_text5">Select cars \nthat are \npocket</string>
+    <string name="view_text2">Convenience</string>
+    <string name="view_text4">Near you</string>
+    <string name="view_text6">friendly</string>
 </resources>
