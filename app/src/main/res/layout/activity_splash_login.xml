@@ -59,17 +59,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imgView_cloudRight">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/muli_extrabold"
             android:text="Welcome Back"
             android:textColor="@color/purple_700"
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/muli_semibold"
             android:text="Sign in to continue"
             android:textColor="@color/black"
             android:textSize="14sp" />
@@ -88,10 +88,11 @@
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/LoginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/button_purple"
             android:text="Login"
             android:textColor="@color/white" />
 
