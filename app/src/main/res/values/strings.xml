@@ -11,4 +11,17 @@
     <string name="view_text2">Convenience</string>
     <string name="view_text4">Near you</string>
     <string name="view_text6">friendly</string>
+    <string name="example">Example screen</string>
+    <string name="basic_details">Basic Details</string>
+    <string name="first_name">First Name*</string>
+    <string name="last_name">Last Name*</string>
+    <string name="email">E-Mail*</string>
+    <string name="gender">Gender*</string>
+    <string name="dob">Date of Birth*</string>
+    <string name="driving">Driving Licence Details</string>
+    <string name="dl_no">XXXX/XXXX/XXXX</string>
+    <string name="upload_front">Upload Front</string>
+    <string name="upload_selfie_with_card">Upload Selfie with Card</string>
+    <string name="declaration1">I have read and agree to the terms and conditions*</string>
+    <string name="declaration2">Subscribe to the email updates.</string>
 </resources>
