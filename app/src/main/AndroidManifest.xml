@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PeerToPeer">
-        <activity android:name=".Dashboard"></activity>
-        <activity android:name=".OnBoarding" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignUp2"></activity>
+        <activity android:name=".SignUp1" />
+        <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Dashboard" />
+        <activity android:name=".OnBoarding" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

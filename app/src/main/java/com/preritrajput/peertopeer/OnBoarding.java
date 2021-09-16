@@ -1,14 +1,13 @@
 package com.preritrajput.peertopeer;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import com.preritrajput.peertopeer.adapters.OnBoardingAdapter;
-import com.preritrajput.peertopeer.databinding.ActivityLoginBinding;
 import com.preritrajput.peertopeer.databinding.ActivityOnBoardingBinding;
 
 import me.relex.circleindicator.CircleIndicator3;
@@ -24,6 +23,7 @@ public class OnBoarding extends AppCompatActivity {
         binding = ActivityOnBoardingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         viewPager2 = findViewById(R.id.view_pager2);
 
         CircleIndicator3 circleIndicator3 = binding.indicator;
@@ -34,20 +34,20 @@ public class OnBoarding extends AppCompatActivity {
 
         viewPager2.setAdapter(viewPager2Adapter);
         binding.nextButton.setOnClickListener(v -> {
-            if(viewPager2.getCurrentItem() == 2){
-                Intent intent = new Intent(OnBoarding.this, Dashboard.class);
+            if (viewPager2.getCurrentItem() == 2) {
+                Intent intent = new Intent(OnBoarding.this, MainActivity.class);
                 startActivity(intent);
-            }
-            else
+
+            } else
                 viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1, true);
         });
 
         viewPager2.setAdapter(viewPager2Adapter);
         binding.backButton.setOnClickListener(v -> {
-            if(viewPager2.getCurrentItem() == 0){
-                Intent intent = new Intent(OnBoarding.this, MainActivity.class);
+            if (viewPager2.getCurrentItem() == 0) {
+                Intent intent = new Intent(OnBoarding.this, Splashscreen.class);
                 startActivity(intent);
-            }else
+            } else
                 viewPager2.setCurrentItem(viewPager2.getCurrentItem() - 1, true);
         });
 
