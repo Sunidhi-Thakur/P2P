@@ -10,4 +10,5 @@
     <color name="yellow">#FFEA00</color>
     <color name="light_background">#FFF5F6FA</color>
     <color name="headings">#FF313131</color>
+    <color name="sub_heading">#A6A6A6</color>
 </resources>
