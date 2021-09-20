@@ -11,4 +11,8 @@
     <color name="light_background">#FFF5F6FA</color>
     <color name="headings">#FF313131</color>
     <color name="sub_heading">#A6A6A6</color>
+    <color name="black_trans80">#50000000</color>
+    <color name="grey">#888888</color>
+    <color name="transparent">#002E3E5C</color>
+
 </resources>
