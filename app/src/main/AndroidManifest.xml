@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PeerToPeer">
-        <activity android:name=".SignUp2"></activity>
+        <activity android:name=".OTPVerification"></activity>
+        <activity android:name=".SignUp2" />
         <activity android:name=".SignUp1" />
         <activity android:name=".Splashscreen">
             <intent-filter>
