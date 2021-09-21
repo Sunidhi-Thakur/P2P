@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "357758740664",
+    "firebase_url": "https://peertopeer-5851a-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "peertopeer-5851a",
     "storage_bucket": "peertopeer-5851a.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "357758740664-ldp58bofnm81d37rmem5be8o7jorlih3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.preritrajput.peertopeer",
+            "certificate_hash": "27cedb2d79b97102256dfcb8611675ef7a258388"
+          }
+        },
         {
           "client_id": "357758740664-pe9vqvrbhfunhb9gfmnbarhrnii61964.apps.googleusercontent.com",
           "client_type": 3
