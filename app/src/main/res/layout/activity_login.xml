@@ -96,7 +96,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/muli_semibold"
             android:background="@drawable/button_purple"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white" />
 
     </LinearLayout>
@@ -108,8 +108,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:alpha="1"
-        android:layout_marginRight="30dp"
-        android:text="Forgot Password?"
+        android:text="@string/forgot_password"
         android:textColor="@color/black"
         android:fontFamily="@font/muli_semibold"
         android:textSize="13sp"

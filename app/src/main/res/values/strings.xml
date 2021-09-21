@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PeerToPeer</string>
     <string name="register_button">Don\'t have an account? <b>Register Here</b></string>
-    <string name="phone">Phone</string>
+    <string name="phone">Phone*</string>
     <string name="next">Next</string>
     <string name="back">Back</string>
     <string name="welcome_on_board">WELCOME ON BOARD</string>
@@ -24,4 +24,13 @@
     <string name="upload_selfie_with_card">Upload Selfie with Card</string>
     <string name="declaration1">I have read and agree to the terms and conditions*</string>
     <string name="declaration2">Subscribe to the email updates.</string>
+    <string name="otp_head">Enter OTP to verify</string>
+    <string name="a_6_digit_code_has_been_sent_to_your_mobile_via_sms_on">A 6 Digit code has been sent to your mobile via SMS on</string>
+    <string name="didn_t_received_the_otp">Didn\'t received the OTP?</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="continue_button">Continue</string>
+    <string name="resend">Resend in 43</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
