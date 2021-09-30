@@ -1,17 +1,24 @@
 package com.preritrajput.peertopeer;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.preritrajput.peertopeer.databinding.ActivityDashboardBinding;
 import com.preritrajput.peertopeer.databinding.ActivityOtpverificationBinding;
@@ -54,7 +61,14 @@ public class Dashboard extends AppCompatActivity {
 
         a=binding.bottomNav.getMenu();
         b=a.findItem(R.id.profile_nav);
-        b.setIcon(R.drawable.dp);
+        Glide.with(getApplicationContext()).asBitmap().load(R.drawable.preritpeer).apply(RequestOptions
+                .circleCropTransform()
+                .placeholder(R.drawable.dp)).into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                b.setIcon(new BitmapDrawable(getResources(),resource));
+            }
+        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener selectedListener= new BottomNavigationView.OnNavigationItemSelectedListener() {

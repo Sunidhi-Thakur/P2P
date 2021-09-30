@@ -1,33 +1,47 @@
 package com.preritrajput.peertopeer;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.NotNull;
 import com.preritrajput.peertopeer.databinding.ActivitySignUp1Binding;
+import com.preritrajput.peertopeer.db.UserHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-
-import static java.security.AccessController.getContext;
-
+import java.util.concurrent.TimeUnit;
 
 public class SignUp1 extends AppCompatActivity {
 
     private ActivitySignUp1Binding binding;
     final Calendar myCalendar = Calendar.getInstance();
     static int age = 18;
+    private FirebaseAuth mAuth;
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBacks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +53,12 @@ public class SignUp1 extends AppCompatActivity {
         binding = ActivitySignUp1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        mAuth = FirebaseAuth.getInstance();
+
         SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("seenOnBoarding", true);
         editor.apply();
-
-
 
         DatePickerDialog.OnDateSetListener date = (view, year, monthOfYear, dayOfMonth) -> {
             myCalendar.set(Calendar.YEAR, year);
@@ -85,12 +99,52 @@ public class SignUp1 extends AppCompatActivity {
 
             boolean check = checkFields(fName, lName, phone, age, gender[0]);
             if (check) {
-                Intent intent = new Intent(SignUp1.this, OTPVerification.class);
-                startActivity(intent);
+
+                UserHelper user = new UserHelper(fName,lName,phone,gender[0], age);
+                DatabaseReference reference = FirebaseDatabase.getInstance("https://peertopeer-5851a-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Registered Users");
+                reference.child(phone).setValue(user);
+
+                binding.progressBar.setVisibility(View.VISIBLE);
+                binding.nextButton.setVisibility(View.INVISIBLE);
+
+                PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber("+91"+phone)
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setActivity(SignUp1.this)
+                        .setCallbacks(mCallBacks)
+                        .build();
+
+                PhoneAuthProvider.verifyPhoneNumber(options);
+
             }else{
                 checkFields(fName, lName, phone, age, gender[0]);
             }
         });
+        mCallBacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {
+                signIn(phoneAuthCredential);
+
+            }
+
+            @Override
+            public void onVerificationFailed(@NonNull @NotNull FirebaseException e) {
+                binding.progressBar.setVisibility(View.INVISIBLE);
+                binding.nextButton.setVisibility(View.VISIBLE);
+                Toast.makeText(SignUp1.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCodeSent(@NonNull @NotNull String s, @NonNull @NotNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(s, forceResendingToken);
+                binding.progressBar.setVisibility(View.INVISIBLE);
+                binding.nextButton.setVisibility(View.VISIBLE);
+                Toast.makeText(SignUp1.this, "OTP Sent",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignUp1.this, OTPVerification.class);
+                        intent.putExtra("auth",s);
+                        startActivity(intent);
+            }
+        };
     }
 
     private void setAge(int year, int monthOfYear, int dayOfMonth) {
@@ -142,6 +196,7 @@ public class SignUp1 extends AppCompatActivity {
         }
         if (gender.equals("X")) {
             Toast.makeText(this, "Select gender", Toast.LENGTH_SHORT).show();
+            check = false;
         }
         if (age < 18) {
             binding.dob.setError("Age should be more than 18");
@@ -150,4 +205,18 @@ public class SignUp1 extends AppCompatActivity {
         return check;
     }
 
+    private void signIn(PhoneAuthCredential credential){
+        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Intent intent = new Intent(SignUp1.this, OTPVerification.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(SignUp1.this, "Error occurred", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
 }
