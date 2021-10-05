@@ -26,16 +26,14 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.NotNull;
 import com.preritrajput.peertopeer.databinding.ActivitySignUp1Binding;
 import com.preritrajput.peertopeer.db.UserHelper;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
-
 
 public class SignUp1 extends AppCompatActivity {
 
