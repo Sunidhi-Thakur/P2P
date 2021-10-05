@@ -23,11 +23,12 @@ public class Splashscreen extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
         boolean hasLoggedIn = settings.getBoolean("hasLoggedIn", false);
         boolean hasRegistered = settings.getBoolean("hasRegistered", false);
+        boolean hasRegistered2 = settings.getBoolean("hasRegistered2", false);
         boolean seenOnBoarding = settings.getBoolean("seenOnBoarding", false);
 
 
         int SPLASH_SCREEN = 2500;
-        if (seenOnBoarding && !(hasLoggedIn && hasRegistered)) {
+        if (seenOnBoarding && !hasLoggedIn) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -37,7 +38,27 @@ public class Splashscreen extends AppCompatActivity {
 
                 }
             }, SPLASH_SCREEN);
-        } else if(hasLoggedIn || hasRegistered) {
+        }else if (seenOnBoarding && !hasRegistered) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Splashscreen.this, SignUp1.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            }, SPLASH_SCREEN);
+        }else if (seenOnBoarding && !(hasRegistered2)) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Splashscreen.this, SignUp2.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            }, SPLASH_SCREEN);
+        } else if(hasLoggedIn && hasRegistered && hasRegistered2) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

@@ -61,6 +61,9 @@ public class SignUp1 extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("seenOnBoarding", true);
         editor.apply();
+        editor.putBoolean("hasLoggedIn", true);
+        editor.apply();
+
 
         DatePickerDialog.OnDateSetListener date = (view, year, monthOfYear, dayOfMonth) -> {
             myCalendar.set(Calendar.YEAR, year);
@@ -101,7 +104,6 @@ public class SignUp1 extends AppCompatActivity {
 
             boolean check = checkFields(fName, lName, phone, age, gender[0]);
             if (check) {
-
                 UserHelper user = new UserHelper(fName,lName,phone,gender[0], age);
                 DatabaseReference reference = FirebaseDatabase.getInstance("https://peertopeer-5851a-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Registered Users");
                 reference.child(phone).setValue(user);
@@ -126,7 +128,6 @@ public class SignUp1 extends AppCompatActivity {
             @Override
             public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {
                 signIn(phoneAuthCredential);
-
             }
 
             @Override
@@ -144,6 +145,7 @@ public class SignUp1 extends AppCompatActivity {
                 Toast.makeText(SignUp1.this, "OTP Sent",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SignUp1.this, OTPVerification.class);
                         intent.putExtra("auth",s);
+                        intent.putExtra("phone", binding.phoneNumber.getText().toString());
                         startActivity(intent);
             }
         };
@@ -193,6 +195,10 @@ public class SignUp1 extends AppCompatActivity {
             check = false;
         }
         if (!phone.matches("[0-9]+")) {
+            binding.phoneNumber.setError("Invalid Phone Number");
+            check = false;
+        }
+        if (phone.length() != 10) {
             binding.phoneNumber.setError("Invalid Phone Number");
             check = false;
         }

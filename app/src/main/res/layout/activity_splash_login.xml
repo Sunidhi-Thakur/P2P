@@ -75,15 +75,17 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/phoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/edittext_bg"
             android:drawableStart="@drawable/ic_baseline_phone_24"
-            android:drawableLeft="@drawable/ic_baseline_phone_24"
             android:drawablePadding="16dp"
             android:hint="@string/phone"
+            android:maxLength="10"
             android:inputType="phone"
+            android:importantForAutofill="no"
             android:padding="16dp"
             android:textSize="14sp" />
 
@@ -123,5 +125,15 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linlay_inputs"
+        app:layout_constraintEnd_toEndOf="@+id/linlay_inputs"
+        app:layout_constraintStart_toStartOf="@+id/linlay_inputs"
+        app:layout_constraintTop_toTopOf="@+id/linlay_inputs"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

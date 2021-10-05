@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,6 +49,17 @@ public class Dashboard extends AppCompatActivity {
         fm.beginTransaction().add(R.id.main_container,fragment3,"3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.main_container,fragment2,"2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container,fragment1,"1").commit();
+
+        SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("hasRegistered2", true);
+        editor.apply();
+        editor.putBoolean("hasLoggedIn", true);
+        editor.apply();
+        editor.putBoolean("hasRegistered", true);
+        editor.apply();
+
+
 
         binding.bottomNav.setOnNavigationItemSelectedListener(selectedListener);
         binding.bottomNav.setItemIconTintList(null);

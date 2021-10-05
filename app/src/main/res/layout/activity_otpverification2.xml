@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OTPVerification">
+    tools:context=".OTPVerification2">
 
     <ImageView
         android:id="@+id/topPanel"
@@ -148,26 +148,26 @@
         android:orientation="horizontal"
         android:layout_marginStart="18dp">
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/didn_t_received_the_otp"
-        android:fontFamily="@font/muli_semibold"
-        android:textColor="@color/sub_heading"
-        android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/didn_t_received_the_otp"
+            android:fontFamily="@font/muli_semibold"
+            android:textColor="@color/sub_heading"
+            android:textSize="16sp"/>
 
-    <TextView
-        android:id="@+id/resend"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/muli_extrabold"
-        android:layout_marginEnd="20sp"
-        android:textColor="@color/purple_700"
-        android:textSize="16sp"
-        android:textAlignment="viewEnd" />
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_extrabold"
+            android:layout_marginEnd="20sp"
+            android:textColor="@color/purple_700"
+            android:textSize="16sp"
+            android:textAlignment="viewEnd" />
 
 
     </LinearLayout>

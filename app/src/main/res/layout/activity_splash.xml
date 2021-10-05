@@ -20,6 +20,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
     <ImageView
         android:id="@+id/imgView_cloudLeft"
         android:layout_width="130dp"
@@ -81,6 +83,7 @@
             android:background="@drawable/edittext_bg"
             android:drawableStart="@drawable/ic_baseline_phone_24"
             android:drawableLeft="@drawable/ic_baseline_phone_24"
+            android:maxLength="10"
             android:drawablePadding="16dp"
             android:hint="@string/phone"
             android:inputType="phone"
@@ -122,5 +125,15 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linlay_inputs"
+        app:layout_constraintEnd_toEndOf="@+id/linlay_inputs"
+        app:layout_constraintStart_toStartOf="@+id/linlay_inputs"
+        app:layout_constraintTop_toTopOf="@+id/linlay_inputs"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

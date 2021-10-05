@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.preritrajput.peertopeer.databinding.ActivityOtpverification2Binding;
 import com.preritrajput.peertopeer.databinding.ActivityOtpverificationBinding;
 import com.preritrajput.peertopeer.utility.GenericTextWatcher;
 
@@ -33,9 +34,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
-public class OTPVerification extends AppCompatActivity {
+public class OTPVerification2 extends AppCompatActivity {
 
-    private ActivityOtpverificationBinding binding;
+    private ActivityOtpverification2Binding binding;
     private String OTP, phone;
     private FirebaseAuth mAuth;
 
@@ -44,7 +45,7 @@ public class OTPVerification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityOtpverificationBinding.inflate(getLayoutInflater());
+        binding = ActivityOtpverification2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
@@ -65,7 +66,7 @@ public class OTPVerification extends AppCompatActivity {
                 binding.resend.setText("Resend in " + millisUntilFinished / 1000);
             }
             public void onFinish() {
-               binding.resend.setText("Send now!");
+                binding.resend.setText("Send now!");
             }
         }.start();
 
@@ -83,7 +84,7 @@ public class OTPVerification extends AppCompatActivity {
         });
 
         binding.backButton.setOnClickListener(v -> {
-            Intent intent = new Intent(OTPVerification.this, SignUp1.class);
+            Intent intent = new Intent(OTPVerification2.this, MainActivity.class);
             startActivity(intent);
         });
 
@@ -106,26 +107,26 @@ public class OTPVerification extends AppCompatActivity {
 
 
     private boolean checkCode(String verification_code) {
-        if (verification_code.isEmpty()) {
-            Toast.makeText(OTPVerification.this, "Enter valid OTP", Toast.LENGTH_SHORT).show();
+        if (verification_code.isEmpty() || verification_code.length() < 6) {
+            Toast.makeText(OTPVerification2.this, "Enter valid OTP", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
 
-        private void signIn(PhoneAuthCredential credential){
-            mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Intent intent = new Intent(OTPVerification.this, SignUp2.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(OTPVerification.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
-                        binding.progressBar.setVisibility(View.INVISIBLE);
-                    }
-
+    private void signIn(PhoneAuthCredential credential){
+        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Intent intent = new Intent(OTPVerification2.this, Dashboard.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(OTPVerification2.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
+                    binding.progressBar.setVisibility(View.INVISIBLE);
                 }
-            });
-        }
+
+            }
+        });
+    }
 }

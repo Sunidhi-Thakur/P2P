@@ -27,8 +27,6 @@ public class SignUp2 extends AppCompatActivity {
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("seenOnBoarding", true);
             editor.apply();
-            editor.putBoolean("hasRegistered", true);
-            editor.apply();
             editor.putBoolean("hasLoggedIn", true);
             editor.apply();
 
