@@ -18,9 +18,9 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_back_arrow"
         android:layout_below="@id/topPanel"
-        android:layout_marginStart="18dp"/>
+        android:layout_marginStart="18dp"
+        android:src="@drawable/ic_back_arrow" />
 
     <TextView
         android:id="@+id/heading"
