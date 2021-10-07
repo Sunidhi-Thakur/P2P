@@ -174,19 +174,23 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/input_area"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button_purple"
         android:fontFamily="@font/muli_semibold"
         android:text="@string/next"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_margin="20dp"
-        android:layout_below="@id/input_area"/>
+        android:textSize="18sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
