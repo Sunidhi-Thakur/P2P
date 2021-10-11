@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ExtraText"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00C6FF"
@@ -34,7 +32,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="31dp"
-        android:contentDescription="@string/todo"
         android:background="@drawable/arrow_14"/>
 
     <View
@@ -52,14 +49,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@drawable/checked1"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/checked1"/>
 
     <TextView
         android:id="@+id/car_list"
         android:layout_width="209dp"
         android:layout_height="46dp"
-        android:text="@string/your_car_brezza_is_listed_successfully"
+        android:text="your_car_brezza_is_listed_successfully"
         android:layout_below="@id/check"
         android:textColor="@color/white"
         android:textAlignment="center"
@@ -71,7 +67,7 @@
         android:layout_height="49dp"
         android:layout_below="@+id/car_list"
         android:layout_centerInParent="true"
-        android:text="@string/go_back"
+        android:text="go_back"
         android:background="@drawable/button_rect"
         android:textColor="#00C6FF"
         android:layout_marginTop="22dp"

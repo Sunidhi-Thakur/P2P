@@ -24,8 +24,6 @@
             #838383
         </item>
     </style>
-    <!-- strings.xml -->
-    <string name="c_a_r_i_n_f">C A R   I N F O</string>
     <style name="car_name">
 
         <item name="android:textSize">
