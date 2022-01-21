@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/choice_bg"
+    android:orientation="vertical"
+    tools:context=".ChooseFlow">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/choose_your_type"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/heading"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:cardBackgroundColor="@color/transparent"
+
+        >
+
+    <LinearLayout
+        android:id="@+id/giveKeys"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dotted_rect"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/car_key" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_extrabold"
+                android:src="@drawable/car_key"
+                android:text="@string/give_your_keys"
+                android:textAlignment="viewEnd"
+                android:textColor="#EADBFA"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_semibold"
+                android:src="@drawable/car_key"
+                android:text="@string/rent_your_car_to_make_some_extra_income"
+                android:textAlignment="viewEnd"
+                android:textColor="#EADBFA"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/card1"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:cardBackgroundColor="@color/transparent"
+        >
+
+        <LinearLayout
+            android:id="@+id/getKeys"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/giveKeys"
+            android:orientation="horizontal"
+            android:background="@drawable/dotted_rect">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/car_1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_extrabold"
+                    android:src="@drawable/car_key"
+                    android:text="@string/get_keys"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#EADBFA"
+                    android:textSize="24sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_semibold"
+                    android:src="@drawable/car_key"
+                    android:text="@string/rent_the_car_and_have_the_time_of_your_life"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#EADBFA"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

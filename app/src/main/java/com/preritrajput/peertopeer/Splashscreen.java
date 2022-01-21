@@ -2,14 +2,25 @@ package com.preritrajput.peertopeer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.preritrajput.peertopeer.databinding.ActivitySplashscreenBinding;
+
 public class Splashscreen extends AppCompatActivity {
+
+    private ActivitySplashscreenBinding binding;
+    static int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,69 +28,36 @@ public class Splashscreen extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.black_trans80));
-        setContentView(R.layout.activity_splashscreen);
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.black_trans80));
+        binding = ActivitySplashscreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
-        boolean hasLoggedIn = settings.getBoolean("hasLoggedIn", false);
-        boolean hasRegistered = settings.getBoolean("hasRegistered", false);
-        boolean hasRegistered2 = settings.getBoolean("hasRegistered2", false);
-        boolean seenOnBoarding = settings.getBoolean("seenOnBoarding", false);
+        Animation animFadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        Animation animFadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
+        Shader shader = new LinearGradient(0, 0, 0, binding.appName.getLineHeight(),
+                Color.parseColor("#b17be1"), Color.parseColor("#459b41ee"), Shader.TileMode.REPEAT);
+        binding.appName.getPaint().setShader(shader);
 
-        int SPLASH_SCREEN = 2500;
-        if (seenOnBoarding && !hasLoggedIn) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(Splashscreen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+        binding.squareLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.squareLogo.startAnimation(animFadeOut);
+                binding.circleLogo.setVisibility(View.VISIBLE);
+                animFadeIn.reset();
+                binding.circleLogo.clearAnimation();
+                binding.circleLogo.startAnimation(animFadeIn);
+                binding.squareLogo.setVisibility(View.INVISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(Splashscreen.this, GetStarted.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 2200);
+            }
+        });
 
-                }
-            }, SPLASH_SCREEN);
-        }else if (seenOnBoarding && !hasRegistered) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(Splashscreen.this, SignUp1.class);
-                    startActivity(intent);
-                    finish();
-
-                }
-            }, SPLASH_SCREEN);
-        }else if (seenOnBoarding && !(hasRegistered2)) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(Splashscreen.this, SignUp2.class);
-                    startActivity(intent);
-                    finish();
-
-                }
-            }, SPLASH_SCREEN);
-        } else if(hasLoggedIn && hasRegistered && hasRegistered2) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(Splashscreen.this, Dashboard.class);
-                    startActivity(intent);
-                    finish();
-
-                }
-            }, SPLASH_SCREEN);
-        } else {
-
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    Intent intent = new Intent(Splashscreen.this, OnBoarding.class);
-                    startActivity(intent);
-                    finish();
-
-                }
-            }, SPLASH_SCREEN);
-        }
     }
 }

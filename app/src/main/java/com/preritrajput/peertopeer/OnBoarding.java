@@ -2,6 +2,7 @@ package com.preritrajput.peertopeer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
 
@@ -32,29 +33,43 @@ public class OnBoarding extends AppCompatActivity {
 
         viewPager2 = findViewById(R.id.view_pager2);
 
+        OnBoardingAdapter viewPager2Adapter = new OnBoardingAdapter(this);
+        viewPager2.setAdapter(viewPager2Adapter);
+
         CircleIndicator3 circleIndicator3 = binding.indicator;
         circleIndicator3.setViewPager(binding.viewPager2);
 
+        viewPager2.setUserInputEnabled(false);
 
-        OnBoardingAdapter viewPager2Adapter = new OnBoardingAdapter(this);
+        binding.skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean("seenOnBoarding", true);
+                editor.apply();
 
-        viewPager2.setAdapter(viewPager2Adapter);
-        binding.nextButton.setOnClickListener(v -> {
-            if (viewPager2.getCurrentItem() == 2) {
-                Intent intent = new Intent(OnBoarding.this, MainActivity.class);
+                Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
                 startActivity(intent);
-
-            } else
-                viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1, true);
+            }
         });
 
-        viewPager2.setAdapter(viewPager2Adapter);
-        binding.backButton.setOnClickListener(v -> {
-            if (viewPager2.getCurrentItem() == 0) {
-                Intent intent = new Intent(OnBoarding.this, Splashscreen.class);
-                startActivity(intent);
+
+
+        binding.nextButton.setOnClickListener(v -> {
+            if(viewPager2.getCurrentItem() == 1){
+                binding.skip.setVisibility(View.GONE);
+                binding.nextButton.setVisibility(View.GONE);
+                binding.continueButton.setVisibility(View.VISIBLE);
+                viewPager2.setCurrentItem(2, true);
+            }
+            else if (viewPager2.getCurrentItem() == 2) {
+                SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean("seenOnBoarding", true);
+                editor.apply();
             } else
-                viewPager2.setCurrentItem(viewPager2.getCurrentItem() - 1, true);
+                viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1, true);
         });
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -74,6 +89,15 @@ public class OnBoarding extends AppCompatActivity {
                 super.onPageScrollStateChanged(state);
             }
 
+        });
+
+        binding.continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
+                startActivity(intent);
+                finish();
+            }
         });
 
     }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:id="@+id/parent"
+    tools:context=".GetStarted">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appName"
+            android:fontFamily="@font/muli_semibold"
+            android:text="@string/tag_line"
+            android:textAlignment="center"
+            android:textColor="@color/sub_heading"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/getStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:paddingHorizontal="50dp"
+        android:text="@string/get_started"
+        android:textAllCaps="false"
+        android:textColor="#ffba2cc7"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+
+
+    </RelativeLayout>

@@ -24,23 +24,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PeerToPeer">
-        <activity android:name=".OTPVerification2"></activity>
+        <activity
+            android:name=".AccountVerified"
+            android:exported="true" />
+        <activity
+            android:name=".ThankYou"
+            android:exported="true" />
+        <activity
+            android:name=".DrivingLicence"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseFlow"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OptionsPage"
+            android:exported="true" />
+        <activity
+            android:name=".GetStarted"
+            android:exported="true" />
+        <activity android:name=".OTPVerification2" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name=".OTPVerification"
+            android:exported="true"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".SignUp2"
+            android:exported="true"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".SignUp1"
+            android:exported="true"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".Splashscreen"
+            android:exported="true"
             android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,12 +78,11 @@
         </activity>
         <activity
             android:name=".Dashboard"
+            android:exported="true"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".OnBoarding"
-            android:screenOrientation="sensorPortrait" />
-        <activity
-            android:name=".MainActivity"
+            android:exported="true"
             android:screenOrientation="sensorPortrait" />
     </application>
 

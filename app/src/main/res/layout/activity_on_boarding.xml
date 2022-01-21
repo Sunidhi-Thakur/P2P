@@ -4,135 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/onboarding_bg"
     tools:context=".OnBoarding">
 
 
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ellipse_bottom" />
+        android:src="@drawable/rentl"
+        android:layout_margin="30dp"
+        android:contentDescription="@string/app_name" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/onBoardText"
-        android:layout_alignParentEnd="true"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ellipse_onboard" />
 
-    <RelativeLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/onBoardText"
-        android:layout_marginBottom="80dp"
-        android:background="@color/purple_700">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-50dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ellipse_background" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="-28dp">
-        </androidx.viewpager2.widget.ViewPager2>
-
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/indicator"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="70dp"
-            app:ci_drawable="@drawable/small_white_circle"
-            app:ci_drawable_unselected="@drawable/view_pager" />
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp" />
 
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/buttonPanel"
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/view_pager2"
+        android:translationZ="4dp"
+        app:ci_drawable="@drawable/small_white_circle"
+        app:ci_drawable_unselected="@drawable/view_pager" />
+
+    <Button
+        android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:layout_margin="24dp"
+        android:textColor="#ffba2cc7"
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="30dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_white"
-            android:text="@string/back"
-            android:fontFamily="@font/muli_semibold"
-            android:textAllCaps="false"
-            android:textColor="@color/purple_700"
-            android:textSize="20sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nextButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="30dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_purple"
-            android:fontFamily="@font/muli_semibold"
-            android:text="@string/next"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
-        android:id="@+id/onBoardText"
-        android:layout_width="match_parent"
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/buttonPanel"
-        android:layout_marginBottom="30dp"
-        android:background="#FD5532"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="26dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/skip"
+        android:textColor="#A567CC"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textColor="#A567CC"
+        android:textSize="16sp"
         android:fontFamily="@font/muli_extrabold"
-        android:padding="5dp"
-        android:text="@string/welcome_on_board"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/onBoardText">
-
-        <ImageView
-            android:id="@+id/circle_center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/small_white_circle" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/logo" />
+        android:src="@drawable/ic_baseline_navigate_next_24" />
+    </LinearLayout>
 
 
-    </RelativeLayout>
 
 </RelativeLayout>

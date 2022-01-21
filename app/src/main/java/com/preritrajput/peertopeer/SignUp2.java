@@ -23,15 +23,16 @@ public class SignUp2 extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.nextButton.setOnClickListener(v -> {
-            SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
+            SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("seenOnBoarding", true);
             editor.apply();
             editor.putBoolean("hasLoggedIn", true);
             editor.apply();
 
-            Intent intent = new Intent(SignUp2.this, Dashboard.class);
+            Intent intent = new Intent(SignUp2.this, DrivingLicence.class);
             startActivity(intent);
+            finish();
 
         });
     }

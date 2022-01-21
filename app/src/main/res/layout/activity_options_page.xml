@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/car_dark"
+    tools:context=".OptionsPage">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appName"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/tag_line"
+        android:textAlignment="center"
+        android:textColor="@color/sub_heading"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/LoginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_btn_border"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="#ffba2cc7"
+        android:textSize="20sp"
+        android:fontFamily="@font/muli_semibold"
+        />
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="@string/login"
+        android:background="@drawable/button_purple"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffba2cc7"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="34dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/muli_semibold"
+        />
+
+</RelativeLayout>

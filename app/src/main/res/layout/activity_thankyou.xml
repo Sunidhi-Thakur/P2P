@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dotted_bg"
+    tools:context=".ThankYou">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/subHeading"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="50dp"
+        android:fontFamily="@font/inder"
+        android:text="@string/thank_you_for_choosing_rentl"
+        android:textColor="#EADBFA"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="50dp"
+        android:fontFamily="@font/inder"
+        android:text="@string/thankyou_subheading"
+        android:textColor="#EADBFA"
+        android:textSize="16sp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/discoverBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:paddingHorizontal="100dp"
+        android:text="@string/discover"
+        android:textAllCaps="false"
+        android:textColor="@color/btn_txt"
+        android:textSize="18sp" />
+
+</RelativeLayout>

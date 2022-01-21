@@ -57,7 +57,7 @@ public class Dashboard extends AppCompatActivity {
         fm.beginTransaction().add(R.id.main_container,fragment2,"2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container,fragment1,"1").commit();
 
-        SharedPreferences settings = getSharedPreferences(MainActivity.LOGIN, 0);
+        SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("hasRegistered2", true);
         editor.apply();

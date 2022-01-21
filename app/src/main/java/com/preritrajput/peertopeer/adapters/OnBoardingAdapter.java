@@ -14,7 +14,7 @@ import com.preritrajput.peertopeer.R;
 
 public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.ViewHolder> {
 
-    private final int[] images = {R.drawable.car, R.drawable.location, R.drawable.money};
+    private final int[] images = {R.drawable.clock, R.drawable.location, R.drawable.wallet};
     private final int[] text1 = {R.string.view_text1,R.string.view_text3, R.string.view_text5};
     private final int[] text2 = {R.string.view_text2,R.string.view_text4,R.string.view_text6};
     private final Context ctx;
@@ -50,7 +50,7 @@ public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.Vi
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            images = itemView.findViewById(R.id.slier_pic);
+            images = itemView.findViewById(R.id.slider_pic);
             text1 = itemView.findViewById(R.id.slider_text1);
             text2 = itemView.findViewById(R.id.slider_text2);
         }

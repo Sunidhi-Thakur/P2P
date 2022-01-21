@@ -1,18 +1,17 @@
 package com.preritrajput.peertopeer.db;
 
 public class UserHelper {
-    String fName, lName, phone, gender;
-    int age;
+    String fName, lName, mobile, email;
 
     public UserHelper() {
     }
 
-    public UserHelper(String fName, String lName, String phone, String gender, int age) {
+    public UserHelper(String fName, String lName, String mobile, String email) {
         this.fName = fName;
         this.lName = lName;
-        this.phone = phone;
-        this.gender = gender;
-        this.age = age;
+        this.mobile = mobile;
+        this.email = email;
+
     }
 
     public String getfName() {
@@ -31,27 +30,19 @@ public class UserHelper {
         this.lName = lName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public String getGender() {
-        return gender;
+    public String getEmail() {
+        return email;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

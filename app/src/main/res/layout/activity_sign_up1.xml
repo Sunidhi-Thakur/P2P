@@ -4,194 +4,230 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/light_background"
+    android:background="@drawable/dotted_bg"
     tools:context=".SignUp1">
 
     <ImageView
-        android:id="@+id/pageNo"
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_signup_1" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/rentl" />
 
     <ImageView
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/pageNo"
+        android:layout_below="@id/imageView5"
         android:layout_marginStart="30dp"
-        android:src="@drawable/ic_signup_background" />
-
-    <ImageView
-        android:id="@+id/main_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pageNo"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/basic_details" />
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_arrow" />
 
     <TextView
-        android:id="@+id/main_heading"
-        android:layout_width="match_parent"
+        android:id="@+id/emailTxt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_image"
-        android:layout_margin="10dp"
-        android:fontFamily="@font/muli_extrabold"
-        android:text="@string/basic_details"
-        android:textColor="@color/headings"
-        android:textSize="24sp" />
+        android:layout_above="@id/emailEditText"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/email"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/emailEditText"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/emailTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_edit_txt_bg"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/mobTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEditText"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/mobile_number"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEditText"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/mobTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/mobEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_edit_txt_bg"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:paddingStart="60dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/mob_code"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/muli_semibold"
+        android:gravity="center_vertical"
+        android:text="@string/_91"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_heading"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_signup_left" />
+        android:layout_height="52dp"
+        android:src="@drawable/line"
+        android:layout_toEndOf="@id/mob_code"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="8dp"
+        />
 
-    <ImageView
+    <TextView
+        android:id="@+id/fNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_heading"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_signup_right" />
+        android:layout_above="@id/fNameEditTxt"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/first_name"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
 
-    <LinearLayout
-        android:id="@+id/input_area"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fNameEditTxt"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/fNameTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/lNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/fNameEditTxt"
+        android:layout_above="@id/lNameEditTxt"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/last_name"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lNameEditTxt"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/lNameTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/lNameEditTxt"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/emailTxt"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@id/fNameEditTxt"
+        android:background="@drawable/ic_name_rect"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:paddingStart="12dp"
+        android:paddingEnd="2dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+
+    <EditText
+        android:id="@+id/fNameEditTxt"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/emailTxt"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_name_rect"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:paddingStart="12dp"
+        android:paddingEnd="2dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+
+    <Button
+        android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/main_heading">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:importantForAutofill="no"
-                android:id="@+id/firstName"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/signup_text"
-                android:hint="@string/first_name"
-                android:inputType="text" />
-
-            <EditText
-                android:importantForAutofill="no"
-                android:id="@+id/lastName"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/signup_text"
-                android:hint="@string/last_name"
-                android:inputType="text" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:background="@drawable/signup_text"
-            android:hint="@string/phone"
-            android:importantForAutofill="no"
-            android:inputType="phone"
-            android:maxLength="10"
-            android:padding="12dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gender"
-            android:layout_marginStart="15dp"
-            android:textColor="@color/black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/purple_700"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="70dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_male"
-                    android:layout_margin="2dp"
-                    android:background="@null"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/purple_700"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="70dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_female"
-                    android:layout_margin="2dp"
-                    android:background="@null"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <EditText
-                android:importantForAutofill="no"
-                android:id="@+id/dob"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/signup_text"
-                android:hint="@string/dob"
-                android:inputType="none"/>
-
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="60dp"
         android:background="@drawable/button_purple"
         android:fontFamily="@font/muli_semibold"
-        android:text="@string/next"
+        android:text="@string/continue_button"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_margin="20dp"
-        android:layout_below="@id/input_area"/>
+        android:textColor="#ffC57ECB"
+        android:textSize="20sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerInParent="true"
+        android:theme="@style/progressBar"
         android:visibility="invisible"/>
 </RelativeLayout>
