@@ -67,7 +67,7 @@
             android:exported="true"
             android:screenOrientation="sensorPortrait" />
         <activity
-            android:name=".Splashscreen"
+            android:name=".SplashScreen"
             android:exported="true"
             android:screenOrientation="sensorPortrait">
             <intent-filter>

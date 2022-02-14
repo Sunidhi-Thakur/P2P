@@ -1,21 +1,17 @@
 package com.preritrajput.peertopeer;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
@@ -27,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.preritrajput.peertopeer.databinding.ActivityLogin2Binding;
-import com.preritrajput.peertopeer.databinding.ActivityOptionsPageBinding;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -51,14 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
-
-        SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("seenOnBoarding", true);
-        editor.apply();
-        editor.putBoolean("hasLoggedIn", true);
-        editor.apply();
-
 
         binding.backButton.setOnClickListener(view -> {
             Intent intent = new Intent(LoginActivity.this, OptionsPage.class);
@@ -145,17 +132,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void signIn(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Intent intent = new Intent(LoginActivity.this, OTPVerification2.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
-                }
-
+        mAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Intent intent = new Intent(LoginActivity.this, OTPVerification2.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 

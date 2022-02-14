@@ -3,11 +3,11 @@ package com.preritrajput.peertopeer;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 import com.preritrajput.peertopeer.databinding.ActivityChooseFlowBinding;
-import com.preritrajput.peertopeer.databinding.ActivityDashboardBinding;
 
 public class ChooseFlow extends AppCompatActivity {
 
@@ -23,20 +23,23 @@ public class ChooseFlow extends AppCompatActivity {
         binding = ActivityChooseFlowBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.getKeys.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                binding.getKeys.setBackgroundResource(R.drawable.ic_selected_bg);
-                binding.giveKeys.setBackgroundResource(R.drawable.dotted_rect);
-            }
+        SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("hasRegistered2", true);
+        editor.putBoolean("hasRegistered",true);
+        editor.putBoolean("seenOnBoarding", true);
+        editor.putBoolean("hasLoggedIn",true);
+        editor.apply();
+
+
+        binding.getKeys.setOnClickListener(view -> {
+            binding.getKeys.setBackgroundResource(R.drawable.ic_selected_bg);
+            binding.giveKeys.setBackgroundResource(R.drawable.dotted_rect);
         });
 
-        binding.giveKeys.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                binding.giveKeys.setBackgroundResource(R.drawable.ic_selected_bg);
-                binding.getKeys.setBackgroundResource(R.drawable.dotted_rect);
-            }
+        binding.giveKeys.setOnClickListener(view -> {
+            binding.giveKeys.setBackgroundResource(R.drawable.ic_selected_bg);
+            binding.getKeys.setBackgroundResource(R.drawable.dotted_rect);
         });
     }
 }

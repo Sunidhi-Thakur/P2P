@@ -23,35 +23,34 @@ public class DrivingLicence extends AppCompatActivity {
         binding = ActivityDrivingLicenceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!binding.checkbox1.isChecked()) {
-                    Snackbar snackbar = Snackbar
-                            .make(binding.parent, "Please tick the check box to continue.", Snackbar.LENGTH_LONG);
-                    snackbar.setBackgroundTint(getResources().getColor(R.color.sub_heading));
-                    snackbar.show();
-                }
-                if(binding.checkbox1.isChecked()){
-                    binding.nextButton.setText("Submit Application");
-                }
-                if(binding.nextButton.getText().toString().equals("Submit Application")){
-                    changeAndProceed();
-                }
-                }
+        binding.nextButton.setOnClickListener(view -> {
+            if(!binding.checkbox1.isChecked()) {
+                Snackbar snackbar = Snackbar
+                        .make(binding.parent, "Please tick the check box to continue.", Snackbar.LENGTH_LONG);
+                snackbar.setBackgroundTint(getResources().getColor(R.color.sub_heading));
+                snackbar.show();
+            }
+            if(binding.checkbox1.isChecked()){
+                binding.nextButton.setText(R.string.submit_application);
+            }
+            if(binding.nextButton.getText().toString().equals("Submit Application")){
+                changeAndProceed();
+            }
+            });
+
+        binding.backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(DrivingLicence.this, SignUp2.class);
+            startActivity(intent);
         });
 
 
     }
 
     private void changeAndProceed() {
-        binding.nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DrivingLicence.this, ThankYou.class);
-                startActivity(intent);
-                finish();
-            }
+        binding.nextButton.setOnClickListener(view -> {
+            Intent intent = new Intent(DrivingLicence.this, ThankYou.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

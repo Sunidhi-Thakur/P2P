@@ -54,4 +54,5 @@ if not near.</string>
     <string name="thankyou_subheading">Your application is under review. \nWe will get back to you in 30 minutes.</string>
     <string name="discover">Discover</string>
     <string name="acc_verified">Account Verified!</string>
+    <string name="submit_application">Submit Application</string>
 </resources>

@@ -2,7 +2,6 @@ package com.preritrajput.peertopeer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
 
@@ -41,17 +40,14 @@ public class OnBoarding extends AppCompatActivity {
 
         viewPager2.setUserInputEnabled(false);
 
-        binding.skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putBoolean("seenOnBoarding", true);
-                editor.apply();
+        binding.skip.setOnClickListener(v -> {
+            SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("seenOnBoarding", true);
+            editor.apply();
+            Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
+            startActivity(intent);
 
-                Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
-                startActivity(intent);
-            }
         });
 
 
@@ -63,12 +59,7 @@ public class OnBoarding extends AppCompatActivity {
                 binding.continueButton.setVisibility(View.VISIBLE);
                 viewPager2.setCurrentItem(2, true);
             }
-            else if (viewPager2.getCurrentItem() == 2) {
-                SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putBoolean("seenOnBoarding", true);
-                editor.apply();
-            } else
+            else
                 viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1, true);
         });
 
@@ -91,13 +82,14 @@ public class OnBoarding extends AppCompatActivity {
 
         });
 
-        binding.continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
-                startActivity(intent);
-                finish();
-            }
+        binding.continueButton.setOnClickListener(view -> {
+            SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("seenOnBoarding", true);
+            editor.apply();
+            Intent intent = new Intent(OnBoarding.this, OptionsPage.class);
+            startActivity(intent);
+            finish();
         });
 
     }

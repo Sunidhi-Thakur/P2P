@@ -1,12 +1,8 @@
 package com.preritrajput.peertopeer;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,13 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -30,9 +21,6 @@ import com.google.firebase.database.annotations.NotNull;
 import com.preritrajput.peertopeer.databinding.ActivitySignUp1Binding;
 import com.preritrajput.peertopeer.db.UserHelper;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class SignUp1 extends AppCompatActivity {
@@ -54,14 +42,10 @@ public class SignUp1 extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("seenOnBoarding", true);
-        editor.apply();
-        editor.putBoolean("hasLoggedIn", true);
-        editor.apply();
-
-
+        binding.backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUp1.this, OptionsPage.class);
+            startActivity(intent);
+        });
 
         binding.continueButton.setOnClickListener(v -> {
             String fName = binding.fNameEditTxt.getText().toString();
@@ -155,17 +139,14 @@ public class SignUp1 extends AppCompatActivity {
     }
 
     private void signIn(PhoneAuthCredential credential){
-        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
-                    Intent intent = new Intent(SignUp1.this, OTPVerification.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(SignUp1.this, "Error occurred", Toast.LENGTH_SHORT).show();
-                }
-
+        mAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                Intent intent = new Intent(SignUp1.this, OTPVerification.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(SignUp1.this, "Error occurred", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 }
