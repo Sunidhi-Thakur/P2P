@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/choice_bg"
+    tools:context=".ListCar">
+
+    <TextView
+        android:id="@+id/carDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/car_details"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/carDetails"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/inder"
+        android:text="@string/enter_your_car_details_for_us_to_have_a_quick_review_which_will_enable_us_to_give_you_an_estimate"
+        android:textColor="@color/white"
+        android:textSize="11sp" />
+
+    <EditText
+        android:id="@+id/manufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subHeading"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/manufacturer"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/manufacturer"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/model"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/model"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/year"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/chassisNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/year"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/chassis_number"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/kmsDriven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chassisNumber"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/kms_driven"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:textColor="#ffC57ECB"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
