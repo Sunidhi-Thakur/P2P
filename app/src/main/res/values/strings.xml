@@ -15,15 +15,14 @@ if not near.</string>
     <string name="view_text6">We care about you. Hence, we won’t make your wallet bite you when you see our prices.</string>
     <string name="example">Example screen</string>
     <string name="basic_details">Basic Details</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name <font color="#FFCF3F3F">*</font></string>
+    <string name="last_name">Last Name <font color="#FFCF3F3F">*</font></string>
     <string name="email">Email</string>
     <string name="gender">Gender</string>
     <string name="dob">Date of Birth</string>
     <string name="driving">Driving Licence</string>
     <string name="aadhar_card_no">XXXX/XXXX/XXXX</string>
     <string name="dl_no">AA–00-0000-0000000</string>
-    <string name="upload_front">Upload Front</string>
     <string name="upload_selfie_with_card">Upload Selfie with Card</string>
     <string name="declaration2">Subscribe to the email updates.</string>
     <string name="otp_head">Enter OTP to verify</string>
@@ -55,4 +54,30 @@ if not near.</string>
     <string name="discover">Discover</string>
     <string name="acc_verified">Account Verified!</string>
     <string name="submit_application">Submit Application</string>
+    <string name="cars_available_for_hourly_daily_weekly_or_monthly_basis">Cars available for hourly, daily, weekly or monthly basis.</string>
+    <string name="rent_your_ride">Rent your Ride</string>
+    <string name="make_your_car_available_for_people_to_rent_and_earn">Make your car available for people to rent and earn.</string>
+    <string name="list_your_ride">List your Ride</string>
+    <string name="manufacturer">Manufacturer <font color="#FFCF3F3F">*</font></string>
+    <string name="year">Year <font color="#FFCF3F3F">*</font></string>
+    <string name="model">Model <font color="#FFCF3F3F">*</font></string>
+    <string name="chassis_number">Chassis Number <font color="#FFCF3F3F">*</font></string>
+    <string name="kms_driven">KMs Driven <font color="#FFCF3F3F">*</font></string>
+    <string name="enter_your_car_details_for_us_to_have_a_quick_review_which_will_enable_us_to_give_you_an_estimate">Enter your car details for us to have a quick review which will enable us to give you an estimate.</string>
+    <string name="car_details">Car Details</string>
+    <string name="free_home_delivery_for_a_booking_of_more_than_6_hours">Free home delivery for a booking of more than 6 hours *</string>
+    <string name="terms_and_conditions_apply">Terms and Conditions Apply <font color="#FFCF3F3F">*</font></string>
+    <string name="get_20_off_on_your_next_trip_after_a_successful_referral">Get 20% off on your next trip after a successful referral *</string>
+    <string name="upload_rear">Upload Rear <font color="#FFCF3F3F">*</font></string>
+    <string name="upload_a_selfie_with_your_card">Upload a selfie with your card <font color="#FFCF3F3F">*</font></string>
+    <string name="upload_front">Upload Front <font color="#FFCF3F3F">*</font></string>
+    <string name="driver_s_side">Driver\'s Side <font color="#FFCF3F3F">*</font></string>
+    <string name="passenger_s_side">Passenger\'s Side <font color="#FFCF3F3F">*</font></string>
+    <string name="front">Front <font color="#FFCF3F3F">*</font></string>
+    <string name="rear">Rear <font color="#FFCF3F3F">*</font></string>
+    <string name="spare_wheel">Spare Wheel</string>
+    <string name="extra_parts">Extra Parts</string>
+    <string name="registration_certificate">Registration Certificate <font color="#FFCF3F3F">*</font></string>
+    <string name="pollution_certificate">Pollution Certificate <font color="#FFCF3F3F">*</font></string>
+    <string name="insurance_document">Insurance Document <font color="#FFCF3F3F">*</font></string>
 </resources>

@@ -65,7 +65,7 @@ public class SplashScreen extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }else if(hasRegistered && hasRegistered2 && hasLoggedIn){
-                    Intent intent = new Intent(SplashScreen.this, ChooseFlow.class);
+                    Intent intent = new Intent(SplashScreen.this, Dashboard.class);
                     startActivity(intent);
                     finish();
                 }else {
@@ -75,7 +75,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
 
 
-            }, 2200);
+            }, 1500);
         });
     }
 }

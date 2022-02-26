@@ -25,9 +25,9 @@
         android:layout_above="@id/subHeading"
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="50dp"
-        android:fontFamily="@font/inder"
+        android:fontFamily="@font/muli_extrabold"
         android:text="@string/thank_you_for_choosing_rentl"
-        android:textColor="#EADBFA"
+        android:textColor="#E5BCF3"
         android:textSize="36sp" />
 
     <TextView
@@ -37,8 +37,9 @@
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="50dp"
         android:fontFamily="@font/inder"
+        android:layout_marginTop="5dp"
         android:text="@string/thankyou_subheading"
-        android:textColor="#EADBFA"
+        android:textColor="#E5BCF3"
         android:textSize="16sp" />
 
 

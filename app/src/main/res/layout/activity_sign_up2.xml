@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/dotted_bg"
     tools:context=".SignUp2">
 
@@ -44,52 +45,114 @@
         android:id="@+id/input_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="30dp"
-        android:layout_below="@id/main_heading">
+        android:layout_below="@id/main_heading"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_edit_txt_bg"
             android:hint="@string/aadhar_card_no"
-            android:textColor="@color/white"
+            android:inputType="textEmailAddress"
             android:paddingStart="15dp"
-            android:textColorHint="#E5BBF3"
-            android:inputType="textEmailAddress"/>
+            android:textColor="@color/white"
+            android:textColorHint="#E5BBF3" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
             android:gravity="center_vertical"
-            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"
                 android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:src="@drawable/upload_front"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/ic_dotted_rect"
+                        android:gravity="center">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/upload_front"/>
-        </LinearLayout>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload" />
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:src="@drawable/upload_selfie"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_front"
+                        android:textColor="#E5BCF3"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inder"/>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/ic_dotted_rect"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_upload" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/upload_rear"
+                            android:textColor="#E5BCF3"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/inder"/>
+
+                    </LinearLayout>
+
+            </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="300dp"
+                    android:background="@drawable/ic_dotted_rect"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_a_selfie_with_your_card"
+                        android:padding="12dp"
+                        android:textAlignment="center"
+                        android:textColor="#E5BCF3"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inder"/>
+
+                </LinearLayout>
+
         </LinearLayout>
 
 
@@ -99,12 +162,12 @@
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="100dp"
         android:layout_below="@id/input_area"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:background="@drawable/button_purple"
         android:fontFamily="@font/muli_semibold"
+        android:paddingHorizontal="100dp"
         android:text="@string/next"
         android:textAllCaps="false"
         android:textColor="@color/btn_txt"

@@ -41,118 +41,182 @@
         android:textColor="@color/white"
         android:textSize="24sp" />
 
-        <LinearLayout
-            android:id="@+id/input_area"
+
+    <LinearLayout
+        android:id="@+id/input_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_heading"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical">
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_below="@id/main_heading">
+            android:background="@drawable/ic_edit_txt_bg"
+            android:hint="AA-00-0000-0000000"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="#E5BBF3" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_edit_txt_bg"
-                android:hint="AA-00-0000-0000000"
-                android:textColor="@color/white"
-                android:paddingStart="15dp"
-                android:textColorHint="#E5BBF3"
-                android:inputType="textEmailAddress"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/ic_dotted_rect"
+                    android:gravity="center">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:src="@drawable/upload_front"/>
+                        android:src="@drawable/ic_upload" />
 
-                    <ImageView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:src="@drawable/upload_front"/>
+                        android:text="@string/upload_front"
+                        android:textColor="#E5BCF3"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inder"/>
+
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="0dp"
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/upload_selfie"/>
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/ic_dotted_rect"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_rear"
+                        android:textColor="#E5BCF3"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/inder"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="300dp"
+                android:background="@drawable/ic_dotted_rect"
+                android:gravity="center"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_upload" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload_a_selfie_with_your_card"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="#E5BCF3"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inder"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/t_n_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/input_area">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:buttonTint="#5A2CA4"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_extralight"
+                android:text="@string/declarartion1"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/compulsory"
+                android:textColor="@color/compulsory" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/t_n_c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/input_area"
-            android:layout_marginTop="8dp">
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkbox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="25dp"
-                    android:buttonTint="#5A2CA4"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/muli_extralight"
-                    android:text="@string/declarartion1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/compulsory"
-                    android:text="@string/compulsory"
-                    android:layout_marginStart="2dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginStart="25dp"
+                android:buttonTint="#5A2CA4"/>
 
-                <CheckBox
-                    android:id="@+id/checkbox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:buttonTint="#5A2CA4"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/muli_extralight"
-                    android:text="@string/declaration2"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_extralight"
+                android:text="@string/declaration2"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </LinearLayout>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"

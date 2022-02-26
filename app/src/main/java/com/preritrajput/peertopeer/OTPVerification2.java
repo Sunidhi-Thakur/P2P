@@ -133,7 +133,7 @@ public class OTPVerification2 extends AppCompatActivity {
     private void signIn(PhoneAuthCredential credential){
         mAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Intent intent = new Intent(OTPVerification2.this, ChooseFlow.class);
+                Intent intent = new Intent(OTPVerification2.this, Dashboard.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(OTPVerification2.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();

@@ -37,14 +37,16 @@
         android:layout_height="60dp"
         android:layout_above="@id/LoginButton"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/ic_btn_border"
+        android:fontFamily="@font/muli_semibold"
         android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textColor="#ffba2cc7"
-        android:textSize="20sp"
-        android:fontFamily="@font/muli_semibold"
-        />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/LoginButton"

@@ -33,7 +33,7 @@ public class AccountVerified extends AppCompatActivity {
         binding.appName.getPaint().setShader(shader);
 
         binding.loginBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(AccountVerified.this, LoginActivity.class);
+            Intent intent = new Intent(AccountVerified.this, Dashboard.class);
             startActivity(intent);
             finish();
         });

@@ -139,38 +139,18 @@
         android:textColor="@color/text_color"
         android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/fNameEditTxt"
-        android:layout_marginStart="4dp"
-        android:layout_toEndOf="@id/fNameTxt"
-        android:text="@string/compulsory"
-        android:textColor="@color/compulsory"
-        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/lNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/lNameEditTxt"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@id/fNameEditTxt"
-        android:layout_above="@id/lNameEditTxt"
         android:fontFamily="@font/muli_semibold"
         android:text="@string/last_name"
         android:textColor="@color/text_color"
         android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/lNameEditTxt"
-        android:layout_marginStart="4dp"
-        android:layout_toEndOf="@id/lNameTxt"
-        android:text="@string/compulsory"
-        android:textColor="@color/compulsory"
-        android:textSize="16sp" />
-
 
     <EditText
         android:id="@+id/lNameEditTxt"
@@ -215,7 +195,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/button_purple"
         android:fontFamily="@font/muli_semibold"
         android:text="@string/continue_button"

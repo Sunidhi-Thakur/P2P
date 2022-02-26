@@ -25,6 +25,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PeerToPeer">
         <activity
+            android:name=".ThankYouRenter"
+            android:exported="true" />
+        <activity
+            android:name=".ListCarUploadDoc"
+            android:exported="true" />
+        <activity
+            android:name=".ListCar4"
+            android:exported="true" />
+        <activity
+            android:name=".ListCar3"
+            android:exported="true" />
+        <activity
+            android:name=".ListCar2"
+            android:exported="true" />
+        <activity
+            android:name=".ListCar"
+            android:exported="true" />
+        <activity
             android:name=".AccountVerified"
             android:exported="true" />
         <activity
