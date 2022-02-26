@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/choice_bg"
+    tools:context=".ListCarUploadDoc">
+
+    <TextView
+        android:id="@+id/carDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="Upload Documents"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/carDetails"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/inder"
+        android:text="Upload your car documents for your car’s safety"
+        android:textColor="@color/white"
+        android:textSize="11sp" />
+
+    <EditText
+        android:id="@+id/registrationCertificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:drawableEnd="@drawable/ic_upload_square"
+        android:hint="@string/registration_certificate"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/registrationCertificate"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:drawableEnd="@drawable/ic_upload_square"
+        android:fontFamily="@font/muli_semibold"
+        android:hint="@string/insurance_document"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/ic_transparent_edit_text"
+        android:drawableEnd="@drawable/ic_upload_square"
+        android:hint="@string/pollution_certificate"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#F1E7F8"
+        android:textColorHint="#F1E7F8"
+        android:layout_below="@id/registrationCertificate"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="#ffC57ECB"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

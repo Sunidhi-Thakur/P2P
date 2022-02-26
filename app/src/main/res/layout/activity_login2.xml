@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_bg"
+    android:id="@+id/parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/rentl" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView5"
+        android:layout_marginStart="30dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_arrow" />
+
+    <TextView
+        android:id="@+id/emailTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/emailEditText"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/email"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/emailEditText"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/emailTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/horizontalDiv"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_edit_txt_bg"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+    <ImageView
+        android:id="@+id/horizontalDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_horizontal_div" />
+
+    <TextView
+        android:id="@+id/mobTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontalDiv"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/mobile_number"
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontalDiv"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@id/mobTxt"
+        android:text="@string/compulsory"
+        android:textColor="@color/compulsory"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="60dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:textColor="#ffC57ECB"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/mobEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_edit_txt_bg"
+        android:fontFamily="@font/muli_semibold"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:paddingStart="60dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/mob_code"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/muli_semibold"
+        android:gravity="center_vertical"
+        android:text="@string/_91"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:src="@drawable/line"
+        android:layout_toEndOf="@id/mob_code"
+        android:layout_below="@id/mobTxt"
+        android:layout_marginStart="8dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:theme="@style/progressBar"/>
+
+</RelativeLayout>

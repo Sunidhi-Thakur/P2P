@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/choice_bg"
     tools:context=".fragments.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,8 @@
             android:layout_marginTop="54dp"
             android:fontFamily="@font/muli_semibold"
             android:text="Good Morning,"
-            android:textSize="14sp"
+            android:textColor="#F2E1F8"
+            android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,15 +32,16 @@
             android:layout_marginStart="20dp"
             android:fontFamily="@font/muli_extrabold"
             android:text="Prerit Rajput"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="54dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="50dp"
             android:src="@drawable/preritpeer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,28 +50,44 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:fontFamily="@font/muli_semibold"
-            android:drawableEnd="@drawable/ic_baseline_location_on_24"
             android:layout_height="wrap_content"
             android:layout_marginStart="-20dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/location_border"
             android:paddingStart="40dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="28dp"
+            android:paddingBottom="12dp"
             android:text="Vaishali, Ghaziabad"
-            android:textColor="@color/grey"
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
-            android:drawablePadding="10dp" />
+            android:drawablePadding="10dp"
+            app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:text="  More than 2,000 Cars Available to rent in your Area"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:drawableStartCompat="@drawable/ic_exclamation_mark"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,11 +95,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/listCar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="7.5dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="#F2F2F2"
+                app:cardBackgroundColor="#F1DFF7"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
 
@@ -91,25 +110,16 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginBottom="40dp"
-                        android:src="@drawable/ic_dots"
-                        app:layout_constraintBottom_toTopOf="@+id/textView6"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/rentacar"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/car_key"
                         app:layout_constraintBottom_toTopOf="@+id/textView6"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -119,7 +129,7 @@
                         android:src="@drawable/ic_baseline_arrow_forward_24"
                         app:layout_constraintBottom_toTopOf="@+id/textView5"
                         app:layout_constraintStart_toEndOf="@+id/textView6"
-                        app:tint="@color/grey" />
+                        app:tint="#1D1c20"/>
 
                     <TextView
                         android:id="@+id/textView6"
@@ -128,8 +138,9 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="6dp"
                         android:fontFamily="@font/muli_extrabold"
-                        android:text="Rent a Car"
+                        android:text="@string/list_your_ride"
                         android:textSize="15sp"
+                        android:textColor="#1D1c20"
                         app:layout_constraintBottom_toTopOf="@+id/textView5"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -141,7 +152,8 @@
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/muli_semibold"
-                        android:text="Cars available for hours and Daily basis."
+                        android:textColor="#1D1c20"
+                        android:text="@string/make_your_car_available_for_people_to_rent_and_earn"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7.5dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="#F2F2F2"
+                app:cardBackgroundColor="#F1DFF7"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
 
@@ -166,26 +178,20 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="50dp">
 
-                    <ImageView
-                        android:id="@+id/dollarDots"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginBottom="40dp"
-                        android:src="@drawable/ic_dots"
-                        app:layout_constraintBottom_toTopOf="@+id/textView8"
-                        app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageView
                         android:id="@+id/dollarImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/dollar"
+                        android:paddingVertical="31dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:src="@drawable/car_1"
+                        android:cropToPadding="true"
                         app:layout_constraintBottom_toTopOf="@+id/textView8"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -195,7 +201,7 @@
                         android:src="@drawable/ic_baseline_arrow_forward_24"
                         app:layout_constraintBottom_toTopOf="@+id/textView7"
                         app:layout_constraintStart_toEndOf="@+id/textView8"
-                        app:tint="@color/grey" />
+                        app:tint="#1D1C20" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -204,7 +210,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="6dp"
                         android:fontFamily="@font/muli_extrabold"
-                        android:text="List Your Car"
+                        android:text="@string/rent_your_ride"
+                        android:textColor="#1D1C20"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@+id/textView7"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -217,8 +224,9 @@
                         android:layout_marginEnd="15dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/muli_semibold"
-                        android:text="Place your car for people to rent and earn."
-                        android:textSize="12sp"
+                        android:text="@string/cars_available_for_hourly_daily_weekly_or_monthly_basis"
+                        android:textSize="11sp"
+                        android:textColor="#1D1c20"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -229,92 +237,136 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/muli_semibold"
-            android:text="More than 2,000 Cars Available to rent in your Area"
-            android:textColor="@color/grey"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            app:cardBackgroundColor="#00E1DE"
+            android:layout_marginTop="25dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:background="@drawable/home_info">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/muli_extrabold"
                     android:text="Unique System with\nreal time tracking"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="25dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="25dp"
-                    android:src="@drawable/trackingapp" />
+                    android:src="@drawable/track_phone" />
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView10"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/muli_extrabold"
-            android:text="Terms And Conditions"
-            android:textColor="@color/grey"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/muli_semibold"
-            android:text="1. Check before handing over your cars for rent.\n2. Always check for driving licence of driver.\n3. Mandatory car checks are required.\n4. We deduct 15% of the Rent from the total amount."
-            android:textColor="@color/grey"
-            android:textSize="12sp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView10" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_info">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/muli_extrabold"
+                    android:paddingVertical="30dp"
+                    android:text="@string/get_20_off_on_your_next_trip_after_a_successful_referral"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/terms_and_conditions_apply"
+                    android:textSize="6dp"
+                    android:paddingBottom="7dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_info">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/muli_extrabold"
+                    android:text="@string/free_home_delivery_for_a_booking_of_more_than_6_hours"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:paddingVertical="30dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/terms_and_conditions_apply"
+                    android:textSize="6dp"
+                    android:paddingBottom="7dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

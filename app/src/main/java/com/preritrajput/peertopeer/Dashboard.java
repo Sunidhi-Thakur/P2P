@@ -1,5 +1,13 @@
 package com.preritrajput.peertopeer;
 
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,29 +15,18 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.preritrajput.peertopeer.databinding.ActivityDashboardBinding;
-import com.preritrajput.peertopeer.databinding.ActivityOtpverificationBinding;
 import com.preritrajput.peertopeer.fragments.HomeFragment;
 import com.preritrajput.peertopeer.fragments.NotificationFragment;
 import com.preritrajput.peertopeer.fragments.ProfileFragment;
 import com.preritrajput.peertopeer.fragments.SearchFragment;
 
 public class Dashboard extends AppCompatActivity {
-
-    private ActivityDashboardBinding binding;
 
     final Fragment fragment1=new HomeFragment();
     final Fragment fragment2=new SearchFragment();
@@ -48,7 +45,7 @@ public class Dashboard extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.black_trans80));
-        binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        com.preritrajput.peertopeer.databinding.ActivityDashboardBinding binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         fm.beginTransaction().add(R.id.main_container,fragment4,"4").hide(fragment4).commit();
@@ -56,10 +53,21 @@ public class Dashboard extends AppCompatActivity {
         fm.beginTransaction().add(R.id.main_container,fragment2,"2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container,fragment1,"1").commit();
 
+        SharedPreferences settings = getSharedPreferences(OptionsPage.LOGIN, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("hasRegistered2", true);
+        editor.apply();
+        editor.putBoolean("hasLoggedIn", true);
+        editor.apply();
+        editor.putBoolean("hasRegistered", true);
+        editor.apply();
+
+
+
         binding.bottomNav.setOnNavigationItemSelectedListener(selectedListener);
         binding.bottomNav.setItemIconTintList(null);
 
-        a=binding.bottomNav.getMenu();
+        a= binding.bottomNav.getMenu();
         b=a.findItem(R.id.profile_nav);
         Glide.with(getApplicationContext()).asBitmap().load(R.drawable.preritpeer).apply(RequestOptions
                 .circleCropTransform()

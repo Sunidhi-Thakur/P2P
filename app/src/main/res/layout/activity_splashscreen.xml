@@ -1,23 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Splashscreen"
-    android:background="@color/white">
+    android:layout_margin="0dp"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Splashscreen">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/imgView_logo"
-        android:layout_width="250dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:layout_height="250dp"
-        android:scaleType="centerInside"
-        app:lottie_rawRes="@raw/car_animation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appName"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/tag_line"
+        android:textAlignment="center"
+        android:textColor="@color/sub_heading"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/square_logo"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/ic_square_logo" />
+
+    <ImageView
+        android:id="@+id/circle_logo"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/ic_circle_logo"
+        android:visibility="gone"/>
+
+</RelativeLayout>

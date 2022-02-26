@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context=".OTPVerification2">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/rentl" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView5"
+        android:layout_marginStart="30dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_arrow" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backButton"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/otp_head"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/subHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="@string/a_6_digit_code_has_been_sent_to_your_mobile_via_sms_on"
+        android:textColor="@color/btn_txt"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subHeading"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="+91******1296"
+        android:textColor="@color/btn_txt"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_dotted_light" />
+
+    <LinearLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/mobile"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/box1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+        <EditText
+            android:id="@+id/box2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:importantForAutofill="no"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+        <EditText
+            android:id="@+id/box3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:importantForAutofill="no"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+        <EditText
+            android:id="@+id/box4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+        <EditText
+            android:id="@+id/box5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+        <EditText
+            android:id="@+id/box6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_otp_rectangle"
+            android:layout_margin="6dp"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/muli_semibold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/resendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otpLayout"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/didn_t_received_the_otp"
+            android:fontFamily="@font/muli_semibold"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_extrabold"
+            android:layout_marginEnd="20sp"
+            android:textColor="@color/btn_txt"
+            android:textSize="16sp"
+            android:textAlignment="viewEnd" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/button_purple"
+        android:fontFamily="@font/muli_semibold"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:layout_margin="24dp"
+        android:textColor="#ffba2cc7"
+        android:textSize="20sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:theme="@style/progressBar"/>
+
+</RelativeLayout>
